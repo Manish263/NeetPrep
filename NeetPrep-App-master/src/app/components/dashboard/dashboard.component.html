@@ -1,0 +1,7 @@
+<app-loader [showLoader] = "isShowLoader"></app-loader>
+<app-nav-bar></app-nav-bar>
+
+<app-custom-table [tableColumns]="tblColDetails" [tableData]="pdfDetails" [hasPermission]="hasEditPermission" (downloadPdf)="onClickDownload($event)" (RefreshList)="RefreshList($event)">
+</app-custom-table>
+
+<app-footer></app-footer>

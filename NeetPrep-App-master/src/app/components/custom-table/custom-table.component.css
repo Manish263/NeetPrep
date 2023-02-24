@@ -1,0 +1,14 @@
+
+td,
+input {
+    font-size: 0.9em;
+}
+input {
+    height: 3em;
+}
+.p-fluid .p-inputtext{
+    font-size: 10px;
+}
+.p-datatable .p-datatable-tbody > tr > td{
+    color: blue;
+}

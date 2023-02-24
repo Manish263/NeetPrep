@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "+e3P11kyK2rIAnmZfTZIK+dNZnzKj1mrjXgdwuveGdc84UjnYHW2l87sJwLeOT+SXAqAWxwCgpKl8i+R2tXtJw==",
+  "success": true,
+  "projectFilePath": "D:\\Project\\Vijay\\project\\Api\\Pdf.API\\Pdf.ModelUtility\\Pdf.ModelUtility.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Pankaj\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.15\\microsoft.aspnetcore.http.features.5.0.15.nupkg.sha512",
+    "C:\\Users\\Pankaj\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\Pankaj\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

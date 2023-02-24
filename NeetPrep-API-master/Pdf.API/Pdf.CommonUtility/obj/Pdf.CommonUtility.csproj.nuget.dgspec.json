@@ -1,0 +1,140 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Project\\Vijay\\project\\Api\\Pdf.API\\Pdf.CommonUtility\\Pdf.CommonUtility.csproj": {}
+  },
+  "projects": {
+    "D:\\Project\\Vijay\\project\\Api\\Pdf.API\\Pdf.CommonUtility\\Pdf.CommonUtility.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Project\\Vijay\\project\\Api\\Pdf.API\\Pdf.CommonUtility\\Pdf.CommonUtility.csproj",
+        "projectName": "Pdf.CommonUtility",
+        "projectPath": "D:\\Project\\Vijay\\project\\Api\\Pdf.API\\Pdf.CommonUtility\\Pdf.CommonUtility.csproj",
+        "packagesPath": "C:\\Users\\Pankaj\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\Vijay\\project\\Api\\Pdf.API\\Pdf.CommonUtility\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Pankaj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Project\\Vijay\\project\\Api\\Pdf.API\\Pdf.ModelUtility\\Pdf.ModelUtility.csproj": {
+                "projectPath": "D:\\Project\\Vijay\\project\\Api\\Pdf.API\\Pdf.ModelUtility\\Pdf.ModelUtility.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Project\\Vijay\\project\\Api\\Pdf.API\\Pdf.ModelUtility\\Pdf.ModelUtility.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Project\\Vijay\\project\\Api\\Pdf.API\\Pdf.ModelUtility\\Pdf.ModelUtility.csproj",
+        "projectName": "Pdf.ModelUtility",
+        "projectPath": "D:\\Project\\Vijay\\project\\Api\\Pdf.API\\Pdf.ModelUtility\\Pdf.ModelUtility.csproj",
+        "packagesPath": "C:\\Users\\Pankaj\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\Vijay\\project\\Api\\Pdf.API\\Pdf.ModelUtility\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Pankaj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.15, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

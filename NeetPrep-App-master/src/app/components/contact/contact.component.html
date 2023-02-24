@@ -1,0 +1,48 @@
+<app-loader [showLoader] = "isShowLoader"></app-loader>
+<app-nav-bar></app-nav-bar>
+<section class="sectionAdjust">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5 alignImg">
+                <img src="../../../assets/Images/contact.png" class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                    <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+                        <p class="lead fw-normal mb-0 me-3">Contact Us</p>
+                    </div>
+                    <div class="my-2 customeAlign">
+                        <i class="bi bi-mailbox"> <span class="text-muted mx-2"> getyourpdf@gmail.com</span></i>
+                    </div>
+
+                    <div class="divider d-flex align-items-center my-4">
+                        <p class="text-center mx-3 mb-0">or</p>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="email" id="email" formControlName="email"
+                            class="form-control form-control-lg customSize" placeholder="Enter your email" />
+                        <span class="text-danger" *ngIf="Email.invalid && Email.touched">
+                            Email is required and it has to be valid
+                        </span>
+                    </div>
+
+                    <div class="form-outline mb-3">
+                        <textarea type="textarea" name="message" formControlName="message"
+                            class="form-control form-control-lg customSize" id="message" cols="30" rows="6"
+                            placeholder="Enter your message"></textarea>
+                        <span class="text-danger" *ngIf="Message.invalid && Message.touched">
+                            Message is required and it has to be minimum 10 character long
+                        </span>
+                    </div>
+
+                    <div class="text-center text-lg-start mt-4 pt-2 customSize">
+                        <button type="submit" [disabled]="contactForm.invalid" class="btn btn-sm btn-primary btn-lg"
+                            style="padding-left: 1.0rem; padding-right: 1.0rem;">Send message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

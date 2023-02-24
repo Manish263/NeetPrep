@@ -1,0 +1,129 @@
+<app-loader [showLoader]="isShowLoader"></app-loader>
+<div class="container">
+    <p-table #dt2 [value]="tableData" dataKey="id" [rows]="10" [showCurrentPageReport]="true"
+        [rowsPerPageOptions]="[10,20,30]" [loading]="loading" styleClass="p-datatable-customers" [paginator]="true"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        [globalFilterFields]="['name','description']">
+        <ng-template pTemplate="caption">
+            <div class="p-d-flex">
+                <span class="p-input-icon-left p-ml-auto">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="dt2.filterGlobal($any($event.target).value, 'contains')"
+                        placeholder="Search keyword" />
+                </span>
+                <span class="p-input-icon-right p-ml-auto p-1" *ngIf="hasPermission">
+                    <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                        (click)="onClickAddNew()" data-bs-target="#staticBackdrop"
+                        style="padding-left: 1rem; padding-right: 1rem;">Add
+                        New</button>
+                </span>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th *ngFor="let colName of tableColumns;">{{colName}}</th>
+            </tr>
+            <!-- <tr>
+            <th>
+                <p-columnFilter type="text" field="name" placeholder="Search by Name"></p-columnFilter>
+            </th>
+            <th>
+                <p-columnFilter type="text" field="description" placeholder="Search in Description"></p-columnFilter>
+            </th>
+            <th></th>
+        </tr> -->
+        </ng-template>
+        <ng-template pTemplate="body" let-item>
+            <tr>
+                <td>
+                    <!-- <img src="../../../assets/Images/bg_1.jpg" [class]="'flag flag-' + item.name" width="30"> -->
+                    <span class="image-text" class="text-success">{{item.name}}</span>
+                </td>
+                <td>
+                    <span class="image-text">
+                        {{item.description}}
+                        <span *ngIf="item.isAvailable" class="badge rounded-pill bg-success">paid</span>
+                    </span>
+                </td>
+                <td>
+                    <span type="button" (click)="onClickDownload(item)"
+                        style="margin-left: .5rem; margin-right: .5rem;"><i class="pi pi-download"></i></span>
+                    <span type="button" (click)="onClickEdit(item)" *ngIf="hasPermission" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop" style="margin-left: .5rem; margin-right: .5rem;"><i
+                            class="pi pi-pencil"></i></span>
+                    <!-- <span type="button" (click)="onClickDelete(item)" *ngIf="hasPermission"
+                        style="margin-left: .5rem; margin-right: .5rem;"><i class="pi pi-times"></i></span> -->
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+            <tr>
+                <td colspan="5">No item found.</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">{{pdfTitle}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form [formGroup]="pdfForm" (ngSubmit)="onSubmit()">
+                <div class="modal-body">
+
+                    <!-- Name input -->
+                    <div class="form-outline mb-4">
+                        <input type="text" id="name" formControlName="name"
+                            class="form-control form-control-lg customSize" placeholder="Enter PDF name" />
+                        <small class="text-danger" *ngIf="Name.invalid && Name.touched">
+                            Name is required
+                        </small>
+                    </div>
+
+                    <!-- Description input -->
+                    <div class="form-outline mb-3">
+                        <input type="text" id="description" formControlName="description"
+                            class="form-control form-control-lg customSize" placeholder="Enter description" />
+                        <small class="text-danger " *ngIf="Description.invalid && Description.touched">
+                            Description is required
+                        </small>
+                    </div>
+
+                    <!-- Description input -->
+                    <div class="form-outline mb-3">
+                        <input type="number" id="price" formControlName="price"
+                            class="form-control form-control-lg customSize" placeholder="Enter price in rupees" />
+                        <small class="text-danger" *ngIf="Price.invalid && Price.touched">
+                            Price is required
+                        </small>
+                    </div>
+
+                    <!-- Link input -->
+                    <div class="form-outline mb-3">
+                        <input type="text" id="link" formControlName="pdfLink"
+                            class="form-control form-control-lg customSize" placeholder="Enter PDF link" />
+                        <small class="text-danger" *ngIf="Link.invalid && Link.touched">
+                            PDF Link is required
+                        </small>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <div class="text-center text-lg-start mt-2 pt-2 customSize">
+                        <button type="button" #closeModal class="btn btn-sm btn-primary" data-bs-dismiss="modal"
+                            style="padding-left: 1rem; padding-right: 1rem;">Cancel</button>
+                    </div>
+                    <div class="text-center text-lg-start mt-2 pt-2 customSize">
+                        <button type="submit" [disabled]="pdfForm.invalid" class="btn btn-sm btn-secondary"
+                            style="padding-left: 2rem; padding-right: 2rem;">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

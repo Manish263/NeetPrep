@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+.ngx-toastr {
+    width: 200px;
+    height: 80px;
+    font-size: 12px;
+}
+
+@media (max-width: 968px) {
+    .ngx-toastr {
+        width: 240px !important;
+        height: 80px !important;
+        font-size: 10px;
+    }
+}

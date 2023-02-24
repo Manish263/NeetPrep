@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Razorpay" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pdf.CommonUtility\Pdf.CommonUtility.csproj" />
+    <ProjectReference Include="..\Pdf.DataAccess\Pdf.DataAccess.csproj" />
+    <ProjectReference Include="..\Pdf.ModelUtility\Pdf.ModelUtility.csproj" />
+  </ItemGroup>
+
+</Project>
